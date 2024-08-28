@@ -11,9 +11,6 @@ export const instance = new Razorpay({
   key_secret: process.env.Razorpay_Secret,
 });
 
-// todo:write a program
-
-
 const app = express();
 
 // using middlewares
@@ -28,12 +25,12 @@ app.get("/", (req, res) => {
 
 app.use("/uploads", express.static("uploads"));
 
-// // importing routes
+// importing routes
 import userRoutes from "./routes/user.js";
 import courseRoutes from "./routes/course.js";
 import adminRoutes from "./routes/admin.js";
 
-// // using routes
+// using routes
 app.use("/api", userRoutes);
 app.use("/api", courseRoutes);
 app.use("/api", adminRoutes);
